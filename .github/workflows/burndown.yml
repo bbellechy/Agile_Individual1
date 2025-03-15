@@ -1,8 +1,8 @@
 name: Update Burndown Chart
 
 on:
-  schedule:
-    - cron: "*/5 * * * *"  # รันทุก 5 นาที
+  issues:
+    types: [opened]
 
 jobs:
   update-chart:
