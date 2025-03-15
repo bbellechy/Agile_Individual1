@@ -1,0 +1,18 @@
+name: Update Burndown Chart
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # รันทุกวันเที่ยงคืน UTC
+
+jobs:
+  update-chart:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: pip install matplotlib requests
+
+      - name: Run Burndown Script
+        run: python burndown_chart.py
