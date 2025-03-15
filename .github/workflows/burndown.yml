@@ -2,7 +2,7 @@ name: Update Burndown Chart
 
 on:
   schedule:
-    - cron: "*/5 * * * *" # รันทุกวันเที่ยงคืน UTC
+    - cron: "*/5 * * * *"  # รันทุก 5 นาที
 
 jobs:
   update-chart:
@@ -17,10 +17,14 @@ jobs:
       - name: Run Burndown Script
         run: python burndown_chart.py
 
-      - name: Commit and Push Chart
+      - name: Configure Git user
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Add burndown chart and commit
+        run: |
           git add burndown_chart.png
-          git commit -m "Update Burndown Chart"
+          git status  # ตรวจสอบว่าไฟล์ถูกเพิ่มหรือไม่
+          git commit -m "Update Burndown Chart" || echo "No changes to commit"
           git push
