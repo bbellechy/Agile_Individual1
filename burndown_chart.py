@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 # 🔹 กำหนดค่า GitHub Repository และ Token
 GITHUB_TOKEN = "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"
 REPO_OWNER = "bbellechy"
-REPO_NAME = "Agile_Individual1"
+REPO_NAME = "projects"
 PROJECT_NUMBER = 1  # เปลี่ยนเป็นหมายเลขของ Project Board
 
 # 🔹 ดึงข้อมูล Issue จาก GitHub API
