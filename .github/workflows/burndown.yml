@@ -2,7 +2,7 @@ name: Update Burndown Chart
 
 on:
   schedule:
-    - cron: "0 0 * * *" # รันทุกวันเที่ยงคืน UTC
+    - cron: "*/5 * * * *" # รันทุกวันเที่ยงคืน UTC
 
 jobs:
   update-chart:
